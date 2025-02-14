@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Basic JS</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="title" placeholder="Title"></input><br><br>
+    <input type="text" id="description" placeholder="Description"></input><br><br>
+    <button id="btn" onclick="addTaskHandler()">Add task</button><br><br>
+    <template id="task-template">
+        <div id="task-item">
+            <div id="task-title"></div>
+            <div id="task-desc"></div>
+            <button id="task-btn"></button>
+        </div>
+    </template>
+    <div id="tasks-list"></div>
+
+    <script>
+        const title = document.getElementById('title');
+        const description = document.getElementById('description');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', addTaskHandler);
+
+        function addTaskHandler() {
+            const template = document.getElementById('task-template');
+            const clone = template.content.cloneNode(true);
+
+            clone.querySelector('#task-title').textContent = title.value;
+            clone.querySelector('#task-desc').textContent = description.value;
+            
+            const taskBtn = clone.querySelector('#task-btn');
+            
+            if(!taskBtn.textContent.trim()){
+                taskBtn.textContent = 'Delete';
+            }
+
+            document.getElementById('tasks-list').appendChild(clone);
+
+            title.value = '';
+            description.value = '';
+        }
+
+
+    </script>
+</body>
+
+</html>
