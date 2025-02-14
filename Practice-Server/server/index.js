@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const globalCatch = require('./middlewares/globalCatch'); 
+const globalCatch = require('../utility/globalCatch'); 
 const connectDB = require('./connectDB');
 
 app.use(bodyParser.json());
