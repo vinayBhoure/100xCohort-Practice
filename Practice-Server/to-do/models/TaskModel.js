@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const UserModel = require('./UserModel');
 
 const TaskModel = new mongoose.Schema({
-    userID: {
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'todo-User',
         required: true
