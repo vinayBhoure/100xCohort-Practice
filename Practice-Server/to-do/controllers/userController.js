@@ -73,6 +73,4 @@ const loginUser = asyncError(async (req, res) => {
     });
 });
 
-const terminateUser = asyncError(async (req, res) => { });
-
-module.exports = { registerUser, loginUser, terminateUser };
+module.exports = { registerUser, loginUser };

@@ -4,7 +4,7 @@ const verifyUser = (req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(401).json({
             success: false,
-            message: 'No token provided'
+            message: 'User is not logged in.'
         });
     }
 
