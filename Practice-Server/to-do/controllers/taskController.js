@@ -33,11 +33,22 @@ const getAllTasks = asyncError(async (req, res) => {
     });
 });
 
-const getCompletedTask = asyncError(async (req, res) => {});
+const updateTask = asyncError(async (req, res) => {
+    const { id } = req.params;
 
-const getPendingTask = asyncError(async (req, res) => {});
-
-const updateTask = asyncError(async (req, res) => {});
+    let task = await TaskModel.findById({_id: id.toString()});
+    if(!task){
+        return res.status(200).json({
+            success: false,
+            message: "Task is no more present."
+        })
+    }
+    await task.changeStatus();
+    res.status(400).json({
+        success:true,
+        message:"Task is updated succesfully !!!"
+    })
+});
 
 const deleteTask = asyncError(async (req, res) => {
     const { id } = req.params;
@@ -68,8 +79,6 @@ const deleteTask = asyncError(async (req, res) => {
 module.exports = {
     createTask,
     getAllTasks,
-    getCompletedTask,
-    getPendingTask,
     updateTask,
     deleteTask
 };
