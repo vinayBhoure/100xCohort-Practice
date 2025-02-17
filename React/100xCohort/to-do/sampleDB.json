@@ -1,0 +1,45 @@
+{
+    "User": [
+        {
+            "id": "1",
+            "name": "vinay bhoure",
+            "email": "bhoure21@gmial.com",
+            "password": "123456"
+        },
+        {
+            "id": "2",
+            "name": "ashish bhoure",
+            "email": "ashishbhaiyya@gmial.com",
+            "password": "123456"
+        }
+    ],
+    "Task": [
+        {
+            "id": "1",
+            "task": {
+                "title": "",
+                "description": ""
+            },
+            "status": "",
+            "userId": ""
+        },
+        {
+            "id": "2",
+            "task": {
+                "title": "",
+                "description": ""
+            },
+            "status": "",
+            "userId": ""
+        },
+        {
+            "id": "3",
+            "task": {
+                "title": "",
+                "description": ""
+            },
+            "status": "",
+            "userId": ""
+        }
+    ]
+}
