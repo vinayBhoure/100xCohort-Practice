@@ -4,6 +4,8 @@ import { lazy, Suspense } from 'react'
 import Avatar from '../public/avatar.avif';
 import { ProjectList } from './data/projectList'
 import { UserProvider } from '../to-do/context/userContext';
+import AtomApp from '../atomPractice/AtomApp';
+import { RecoilRoot } from 'recoil';
 
 const AppTodo = lazy(() => import('../to-do/AppTodo'))
 
@@ -14,6 +16,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path='/' element={<HomeScreen />} />
+          <Route path='/atom' element={<RecoilRoot><AtomApp /></RecoilRoot>} />
           <Route path="/to-do/*" element={<UserProvider><AppTodo /></UserProvider>} />
         </Routes>
       </Suspense>
