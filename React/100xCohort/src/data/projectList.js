@@ -9,4 +9,9 @@ export const ProjectList = [
       description: 'State management using Recoil',
       link: '/atom'
     },
+    {
+      title: 'Youtube',
+      description: 'Creating clone using pure tailwind css',
+      link: '/youtube'
+    },
   ]
